@@ -1,0 +1,25 @@
+version: "3.8"
+
+networks:
+  ambr-phonebook:
+
+
+volumes:
+  ambr-phonebook:
+
+
+services:
+  database:
+    image: postgres:14.5
+    volumes:
+      - ambr-phonebook:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_HOST: database
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: ambr_phonebook
+      POSTGRES_PASSWORD: supersecret
+      POSTGRES_DB: ambr_phonebook
+    ports:
+      - 5432:5432
+    networks:
+      - ambr-phonebook
