@@ -1,5 +1,12 @@
 declare module 'nuxt/schema' {
   interface NuxtConfig {
+    app: {
+      head: {
+        title: string
+        description: string
+      }
+    }
+
     build?: {
       transpile: string[]
     }

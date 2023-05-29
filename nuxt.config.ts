@@ -1,4 +1,11 @@
 export default defineNuxtConfig({
+  app: {
+    head: {
+      title: 'Phonebook Nuxt3 + tRPC',
+      description: 'Phonebook App using Nuxt3 + tRPC'
+    }
+  },
+
   build: {
     transpile: ['primevue', 'trpc-nuxt']
   },
