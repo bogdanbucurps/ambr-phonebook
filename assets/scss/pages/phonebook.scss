@@ -1,0 +1,175 @@
+.phonebook-section {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+
+  .phonebook {
+    width: 100%;
+    max-width: 40rem;
+    height: 100%;
+    max-height: 60rem;
+    padding: 1rem 2rem;
+    border-radius: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    .header {
+      padding: 1rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .icon {
+        color: $gray-dark;
+      }
+
+      span {
+        font-size: 2rem;
+        padding: 0 1rem;
+        color: $gray-dark;
+      }
+    }
+
+    .list-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+
+      span {
+        font-size: 1.5rem;
+        color: $gray-dark;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        background-color: $gray-light-md;
+        border: none;
+        color: $gray-dark;
+      }
+    }
+
+    .search {
+      width: 100%;
+      padding: 1rem 0;
+
+      input {
+        width: 100%;
+      }
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+
+      &-item {
+        padding: 0.5rem 0 0.5rem 1rem;
+
+        .main {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .details {
+            display: flex;
+            flex-direction: column;
+
+            .name {
+              font-size: 1rem;
+              color: $gray-dark;
+            }
+
+            .phone-number {
+              font-size: 0.75rem;
+              color: $gray-medium;
+            }
+          }
+
+          .actions {
+            button {
+              padding: 0.5rem;
+              border: 1px solid;
+              margin: 0.5rem;
+            }
+
+            .edit {
+              background-color: $white;
+              border: 1px solid $blue;
+              color: $blue;
+
+              &:hover {
+                background-color: $blue;
+                color: $white;
+              }
+            }
+
+            .remove {
+              background-color: $white;
+              border: 1px solid $red;
+              color: $red;
+
+              &:hover {
+                background-color: $red;
+                color: $white;
+              }
+            }
+          }
+        }
+
+        .edit-form {
+          display: none;
+          height: 0;
+          transition-delay: 0.25s;
+          transition-duration: 1s;
+          transition-property: height;
+
+          :deep(.p-inputtext) {
+            margin-bottom: 0.5rem;
+          }
+
+          :deep(.p-inputgroup) {
+            margin-bottom: 0.5rem;
+
+            .p-inputgroup-addon {
+              padding: 0;
+              border: none;
+              border-top-left-radius: 0.5rem;
+              border-bottom-left-radius: 0.5rem;
+              border-top-right-radius: 0;
+              border-bottom-right-radius: 0;
+              background: none;
+
+              .p-dropdown {
+                height: 2.75rem;
+                vertical-align: middle;
+                align-self: flex-start;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                width: 10rem;
+
+                &-label {
+                  margin: 0;
+                }
+
+                &-trigger {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+
+        .edit-form.visible {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          padding: 0.5rem 0;
+          transition-delay: 0.25s;
+          transition-duration: 1s;
+          transition-property: height;
+        }
+      }
+    }
+  }
+}
